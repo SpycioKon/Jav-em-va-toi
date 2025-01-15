@@ -5,6 +5,11 @@ import org.springframework.stereotype.Component;
 
 @Component("BaseballCouch")
 public class BaseballCouch implements Couch {    
+
+    public BaseballCouch(){
+        System.out.println(" "+getClass().getSimpleName());
+    }
+    
     @Override
     public String goodMorning(){
         return "Good morning";

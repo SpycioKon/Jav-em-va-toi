@@ -13,7 +13,7 @@ public class controllerCouch {
     private Couch mycouch;
 
     @Autowired
-    public controllerCouch(@Qualifier("CricketCouch") Couch thecouch){
+    public controllerCouch(@Qualifier("BaseballCouch") Couch thecouch){
          mycouch = thecouch;
     }
 
