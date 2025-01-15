@@ -1,6 +1,10 @@
 package com.example.demo;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class controllerCouch {
 
     private Couch mycouch;
+    private Couch anothercouch;
 
     @Autowired
-    public controllerCouch(@Qualifier("BaseballCouch") Couch thecouch){
-         mycouch = thecouch;
+    public controllerCouch(@Qualifier("CricketCouch") Couch theCouch,
+    @Qualifier("CricketCouch") Couch anotherCouch){
+        mycouch = theCouch;
+        anothercouch = anotherCouch;
     }
 
     @GetMapping("/mo")
@@ -30,5 +37,16 @@ public class controllerCouch {
     public String goodEvening() {
         return mycouch.goodEvening();
     }
+
+    @PreDestroy
+    public void DoBeFor(){
+        System.out.println("Starting...");
+    }
+
+    @PostConstruct
+    public void DoCleanAfter(){
+        System.out.println("Clear momories leck!!");
+    }
+
     
 }
