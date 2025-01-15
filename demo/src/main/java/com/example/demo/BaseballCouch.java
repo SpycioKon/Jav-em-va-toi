@@ -1,9 +1,10 @@
 package com.example.demo;
+
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component("CricketCouch")
-public class CricketCouch implements Couch {
-
+@Component("BaseballCouch")
+public class BaseballCouch implements Couch {    
     @Override
     public String goodMorning(){
         return "Good morning";
@@ -18,4 +19,4 @@ public class CricketCouch implements Couch {
     public String goodEvening(){
         return "Good evening";
     };
-}
+}    

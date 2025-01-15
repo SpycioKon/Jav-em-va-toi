@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -12,7 +13,7 @@ public class controllerCouch {
     private Couch mycouch;
 
     @Autowired
-    public controllerCouch(Couch thecouch){
+    public controllerCouch(@Qualifier("CricketCouch") Couch thecouch){
          mycouch = thecouch;
     }
 
