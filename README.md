@@ -1,5 +1,7 @@
 ﻿# Jav-em-va-toi
-- Day 1: Chạy một ứng dụng cơ bản
-  + xử lý Bean
+- Day 1: Run a simply application
+  + Bean
   + Lazy, Qualifier
-- Day 2: Kết nối với db
+- Day 2: Connect with database(Mysql)
+  + Using Layered Architecture
+  + create Students Data Access Object (DAO)
