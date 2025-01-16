@@ -10,6 +10,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="students")
 public class Students {
+    
+    public Students(String lastname, String firstname, String email){
+        this.firstname = firstname;
+        this.lastname= lastname;
+        this.email = email;
+    }
+    public Students() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,4 +33,5 @@ public class Students {
 
     @Column(name = "email")
     private String email;
+
 }

@@ -5,6 +5,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import com.example.demo.dao.StudentDAO;
+import com.example.demo.entity.Students;
+
 @SpringBootApplication
 public class DemoApplication {
 
@@ -14,9 +17,18 @@ public class DemoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner CommandLineRunner(String[] args){
+	public CommandLineRunner CommandLineRunner(StudentDAO studentDAO){
 		return runner ->{
-			System.out.println("Hello world");
+			createStudent(studentDAO);
 		};
+	}
+	public void createStudent(StudentDAO studentDAO){
+		System.out.println("Creating Object...");
+		Students tempstudent = new Students("konchan","spycio","hackervnn40@gmail.com");
+
+		System.out.println("Saving...");
+		studentDAO.save(tempstudent);
+
+		System.out.println("Saves student. Gen id: ");
 	}
 }

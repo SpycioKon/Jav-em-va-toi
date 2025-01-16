@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,13 +14,13 @@ public class StudentDAOImpl implements StudentDAO  {
     private EntityManager entityManager;
 
     @Autowired
-    public StudentDAOImpl(EntityManager thEntityManager){
-        entityManager = thEntityManager;
+    public StudentDAOImpl(EntityManager theEntityManager){
+        entityManager = theEntityManager;
     }
 
     @Override
     @Transactional
-    public void save(Students students){
-        entityManager.persist(students);
+    public void save(Students theStudent){
+        entityManager.persist(theStudent);
     }
 }
