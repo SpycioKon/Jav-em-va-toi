@@ -1,6 +1,8 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Couch;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;

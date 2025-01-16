@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,8 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="student")
-public class Student {
+@Table(name="students")
+public class Students {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
