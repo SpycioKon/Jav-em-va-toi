@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,7 +21,7 @@ public class DemoApplication {
 	@Bean
 	public CommandLineRunner CommandLineRunner(StudentDAO studentDAO){
 		return runner ->{
-			findById(studentDAO);
+			findAll(studentDAO);
 		};
 	}
 	public void createStudent(StudentDAO studentDAO){
@@ -38,6 +40,18 @@ public class DemoApplication {
 		Students myStudent = studentDAO.findById(1);
 		
 		System.out.println("student "+myStudent);
+	}
+
+	public void findAll(StudentDAO studentDAO){
+		
+		System.out.println("Finding...");
+		List<Students> myStudent = studentDAO.findAll();
+		
+		// System.out.println("student "+myStudent);
+		for (Students students : myStudent) {
+			System.out.println("student "+students);
+		}
 
 	}
+
 }
