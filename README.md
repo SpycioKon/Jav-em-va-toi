@@ -5,3 +5,6 @@
 - Day 2: Connect with database(Mysql)
   + Using Layered Architecture
   + create Students Data Access Object (DAO)
+  + Insert into DB
+  + findByID
+  + findAll
