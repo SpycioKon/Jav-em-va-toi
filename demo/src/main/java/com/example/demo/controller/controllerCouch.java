@@ -17,7 +17,7 @@ public class controllerCouch {
 
     private Couch mycouch;
     private Couch anothercouch;
-
+    
     @Autowired
     public controllerCouch(@Qualifier("CricketCouch") Couch theCouch,
     @Qualifier("CricketCouch") Couch anotherCouch){

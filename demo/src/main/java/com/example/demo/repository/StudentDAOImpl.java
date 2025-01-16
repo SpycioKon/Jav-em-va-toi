@@ -7,10 +7,13 @@ import com.example.demo.dao.StudentDAO;
 import com.example.demo.entity.Students;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
 @Repository
 public class StudentDAOImpl implements StudentDAO  {
+    
+    @PersistenceContext
     private EntityManager entityManager;
 
     @Autowired
@@ -23,4 +26,10 @@ public class StudentDAOImpl implements StudentDAO  {
     public void save(Students theStudent){
         entityManager.persist(theStudent);
     }
+
+    @Override
+    public Students findById(Integer id){
+        return entityManager.find(Students.class, id);
+    }
+
 }

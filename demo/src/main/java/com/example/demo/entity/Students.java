@@ -34,4 +34,9 @@ public class Students {
     @Column(name = "email")
     private String email;
 
+    @Override
+    public String toString() {
+        return id + "|" + firstname + "|" + lastname + "|" + email + "";
+    }
+
 }
